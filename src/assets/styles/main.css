@@ -1,0 +1,81 @@
+* {padding:0; margin:0; font-family: "Microsoft YaHei"; font-size: 12px;}
+*:focus {outline: none;}
+html, body, #app, #normal {width: 100%; height: 100%;}
+ul, li {list-style:none;}
+a {text-decoration: none;}
+
+.left {float: left;}
+.right {float: right;}
+
+.cont-menu .el-submenu__title {
+  margin-top: 10px;
+  padding: 0;
+  height: 45px;
+  line-height: 45px;
+  font-size: 14px;
+  border-top: 1px solid #eee;
+}
+.cont-menu .el-menu-item-group__title {
+  padding: 0;
+}
+.cont-menu .el-menu-item {
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+}
+.content .el-main {
+  padding: 0 20px 20px;
+}
+.content .el-card {
+  margin-top: 20px;
+}
+
+/* elemetn ui 优化 */
+.el-range-editor.el-input__inner {
+  width: auto;;
+}
+.el-main .el-form-item__label,
+.el-main .el-range-input,
+.el-main .el-input__inner {
+  font-size: 12px;
+}
+.el-form {
+  margin: 20px 0 0;
+  overflow: hidden;
+}
+.box-card .el-card__header {
+  height: 50px;
+  padding: 8px 20px;
+}
+.box-card .el-radio {
+  margin-top: 8px;
+}
+.box-card .el-radio span {
+  height: 14px;
+  font-size: 12px;
+}
+.box-card .el-radio__label {
+  margin-right: 20px;
+}
+.box-card .el-pagination__total {
+  position: absolute;
+  left: 0;
+}
+.box-card .el-pagination__sizes {
+  float: right;
+}
+.box-card .el-select-dropdown__item {
+  font-size: 12px;
+}
+.el-select-dropdown__list .el-select-dropdown__item span,
+.box-card .el-pagination__sizes .el-input .el-input__inner {
+  font-size: 12px;
+}
+.box-card .el-pagination {
+  position: relative;
+  text-align: right;
+  width: 100%;
+  height: 45px;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
