@@ -1,4 +1,3 @@
-# junwu
 
 > A Vue.js project
 
@@ -33,6 +32,7 @@ npm run build --report
         | router          路由配置目录
         | routes          页面文件目录
         | services        请求配置目录
+        | store           Vuex
         | App.vue         Vue文件
         | main.js         主js文件
     > static          静态文件，可放入一些静态文件
