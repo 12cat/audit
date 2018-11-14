@@ -10,6 +10,8 @@
       <p>
         <button @click="checkModular">调用子组件方法</button>
         &nbsp;
+        <button @click="loading">loading</button>
+        &nbsp;
         <button @click="$store.state.review.run()">store.state</button>
         &nbsp;
         {{ storeStr }}
@@ -64,6 +66,12 @@ export default {
     parentFun (str) {
       this.$message.success('parentFun is run ' + str)
       this.title = str
+    },
+    loading () {
+      this.$store.commit('starLoading')
+      setTimeout(() => {
+        this.$store.commit('stopLoading')
+      }, 2000)
     }
   }
 }

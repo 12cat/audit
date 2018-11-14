@@ -1,5 +1,5 @@
 <template>
-  <div class="layout">
+  <div class="layout" v-loading="$store.state.review.loading">
       <top></top>
       <div class="content">
         <div class="crumbs">

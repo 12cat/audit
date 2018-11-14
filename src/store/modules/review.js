@@ -2,10 +2,17 @@ export default {
   state: {
     // $store.state.review.text
     text: 'text',
+    loading: false,
     run: null
   },
   mutations: {
     // $store.commit('fun1')
+    starLoading (state) {
+      state.loading = true
+    },
+    stopLoading (state) {
+      state.loading = false
+    },
     fun1 (state, playload) {
       state.text += playload
     },
