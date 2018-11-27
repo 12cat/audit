@@ -6,6 +6,19 @@
         <li v-for="e in data.products" :key="e.image" v-text="e.image"></li>
       </ul>
     </el-card>
+    <el-card class="box-card">
+      <table class="mytable">
+        <tr v-for="(sub, index) in tableData" :key="index">
+          <td :class="{'hoverStyle':index==tabTrIndex && i==tabTdIndex }"
+              v-for="(item, i) in sub.sub" :key="i"
+              @mouseover="tabTrIndex=index; tabTdIndex=i"
+              @mouseout="tabTrIndex=tabTdIndex=-1">
+            {{ item.text }}
+            <span v-text="item.title"></span>
+          </td>
+        </tr>
+      </table>
+    </el-card>
     <el-card>
       <p>
         <button @click="checkModular">调用子组件方法</button>
@@ -33,7 +46,28 @@ export default {
       title: 'setting',
       storeStr: 'stroe',
       param: {name: 123},
-      data: {}
+      data: {},
+      tabTrIndex: -1,
+      tabTdIndex: -1,
+      tableData: [
+        {
+          sub: [
+            {text: 111, title: 123},
+            {text: 222, title: 456},
+            {text: 333, title: 789}
+          ]
+        }, {
+          sub: [
+            {text: 111, title: 123},
+            {text: 333, title: 789}
+          ]
+        }, {
+          sub: [
+            {text: 111, title: 123},
+            {text: 222, title: 456}
+          ]
+        }
+      ]
     }
   },
   // 渲染html，生成dom之前
@@ -89,5 +123,23 @@ export default {
     border-radius: 3px;
     color: white;
     cursor: pointer;
+  }
+  .mytable td {
+    position: relative;
+    cursor: pointer;
+  }
+  .mytable td span {
+    display: none;
+  }
+  .mytable .hoverStyle span {
+    position: absolute;
+    padding: 3px;
+    border: 1px solid red;
+    border-radius: 3px;
+    background-color: #fff;
+    top: 40px;
+    left: 0;
+    display: block;
+    z-index: 100;
   }
 </style>
