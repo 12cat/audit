@@ -7,7 +7,7 @@ import setting from './setting'
 const baseUrl = 'api/'
 // const baseUrl = ''
 let obj = {}
-let arr = [review, setting, login]
+let arr = [login, review, setting]
 
 arr.forEach(p => {
   obj[p.category] = {}
