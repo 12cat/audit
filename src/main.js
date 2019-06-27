@@ -8,6 +8,8 @@ import elementUI from 'element-ui'
 import axios from 'axios'
 import qs from 'qs'
 import services from '@/services'
+import directive from '@/utils/directive'
+import filter from '@/utils/filter'
 
 // self plugins
 Vue.use(elementUI)
@@ -19,6 +21,15 @@ Vue.config.productionTip = false
 // 全局变量
 Vue.prototype.local_user_name = ''
 Vue.prototype.local_user_img = ''
+
+// 引入自定义指令
+for (let key in directive) {
+  Vue.directive(key, directive[key])
+}
+// 引入自定义过滤器
+for (let key in filter) {
+  Vue.filter(key, filter[key])
+}
 
 /* eslint-disable no-new */
 new Vue({

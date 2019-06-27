@@ -3,6 +3,7 @@ import Router from 'vue-router'
 
 import Normal from './normal'
 import Login from './login'
+import model from './model'
 
 Vue.use(Router)
 
@@ -10,6 +11,7 @@ const router = new Router({
   routes: [
     Login,
     Normal,
+    model,
     {
       path: '*',
       redirect: '/review'
@@ -25,7 +27,7 @@ router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.notAuth)) {
     next()
   } else {
-    console.log(`${to.fullPath} 需要鉴权`)
+    // console.log(`${to.fullPath} 需要鉴权`)
     next()
     // 鉴权
     // services.auth().then(
